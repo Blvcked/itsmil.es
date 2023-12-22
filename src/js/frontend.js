@@ -84,7 +84,7 @@ function windowLoad() {
     initMaps();
     betterOffcanvas();
 
-    exitLoader();
+    exitLoader("#siteLoader");
 }
 window.addEventListener(`load`, windowLoad, false);
 
