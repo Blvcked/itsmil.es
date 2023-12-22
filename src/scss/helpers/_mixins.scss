@@ -66,3 +66,26 @@
 .filter--plus-lighter--invert-half {
     @include filter-blend(plus-lighter, 50%);
 }
+
+/**
+ * Mask Mixin
+ * Creates a mask either below or above the content.
+ * 
+ * @param {String} $type - "below" or "above" to set the mask position.
+ * @param {Color} $background - Background color of the mask.
+ */
+@mixin mask($type: "below", $background: rgb(0 0 0 / 40%)) {
+    position: relative;
+    $pseudo-element: if($type == "below", "::before", "::after");
+
+    &#{ $pseudo-element } {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $background;
+    }
+}

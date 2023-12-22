@@ -14,7 +14,8 @@
         -webkit-box-orient: vertical;
     }
 
-    @include overlay(
+    @include mask(
+        "above",
         linear-gradient(90deg, transparent 80%, rgb(var(--bg-color)))
     );
 
