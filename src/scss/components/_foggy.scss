@@ -1,0 +1,23 @@
+.foggy {
+    --lines-limit: 1;
+    overflow: hidden;
+
+    @supports not (-webkit-line-clamp: 1) {
+        --line-height: 1.6em;
+        line-height: var(--line-height) !important;
+        max-height: calc(var(--line-height) * var(--lines-limit));
+    }
+
+    @supports (-webkit-line-clamp: 1) {
+        display: -webkit-box;
+        -webkit-line-clamp: var(--lines-limit);
+        -webkit-box-orient: vertical;
+    }
+
+    @include overlay(
+        linear-gradient(90deg, transparent 80%, rgb(var(--bg-color)))
+    );
+
+    // Without ELLIPSIS, forces 1 line, ignores --lines-limit
+    white-space: nowrap;
+}
