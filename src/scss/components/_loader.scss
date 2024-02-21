@@ -2,7 +2,7 @@ $loaderStyle: "fill-logo--down"; // simple || fill-logo--up/down/right/left
 
 #siteLoader {
     position: fixed;
-    z-index: var(--layer--above-all);
+    z-index: var(--layer--above-all, 10);
     top: 0;
     left: 0;
     height: 100%;
